@@ -1,6 +1,5 @@
-const { Op } = require('sequelize');
 const { Collection } = require('discord.js');
-const { Users, CurrencyShop } = require('./dbObjects.js');
+const { Users } = require('./dbObjects.js');
 const currency = new Collection();
 
 /*
@@ -8,7 +7,7 @@ const currency = new Collection();
  * You can read more about this issue On the [Sequelize issue tracker](https://github.com/sequelize/sequelize/issues/7310).
  */
 
-Reflect.defineProperty(currency, 'add', {
+const addCurrency = Reflect.defineProperty(currency, 'add', {
 	value: async (id, amount) => {
 		const user = currency.get(id);
 
@@ -24,9 +23,11 @@ Reflect.defineProperty(currency, 'add', {
 	},
 });
 
-Reflect.defineProperty(currency, 'getBalance', {
+const getBalance = Reflect.defineProperty(currency, 'getBalance', {
 	value: id => {
 		const user = currency.get(id);
 		return user ? user.balance : 0;
 	},
 });
+
+module.exports = { addCurrency, getBalance };

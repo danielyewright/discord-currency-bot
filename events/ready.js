@@ -1,3 +1,7 @@
+const { Collection } = require('discord.js');
+const currency = new Collection();
+const { Users } = require('../dbObjects.js');
+
 module.exports = {
 	name: 'ready',
 	once: true,
