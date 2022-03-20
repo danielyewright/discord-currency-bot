@@ -6,6 +6,7 @@ const { Users, CurrencyShop } = require('./dbObjects.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const currency = new Collection();
 
+/*
 Reflect.defineProperty(currency, 'add', {
 	value: async (id, amount) => {
 		const user = currency.get(id);
@@ -28,6 +29,7 @@ Reflect.defineProperty(currency, 'getBalance', {
 		return user ? user.balance : 0;
 	},
 });
+*/
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
