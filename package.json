@@ -1,0 +1,25 @@
+{
+  "name": "currency",
+  "version": "0.1.0",
+  "description": "A discord currenty system bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config index.js dotenv_config_path=./development.env",
+    "dev": "nodemon -r dotenv/config index.js dotenv_config_path=./development.env",
+    "deploy-commands": "node -r dotenv/config deploy-commands.js dotenv_config_path=./development.env",
+    "lint": "eslint . --ext .js --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.29.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "sequelize": "^6.17.0",
+    "sqlite3": "^5.0.2"
+  }
+}
